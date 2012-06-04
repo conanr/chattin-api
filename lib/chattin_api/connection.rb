@@ -1,5 +1,7 @@
 require 'faraday'
 
+require 'chattin_api/result'
+
 module ChattinApi
   class Connection
     DEFAULTS = {:port => 80}
@@ -23,7 +25,7 @@ module ChattinApi
         req.body = body_json
       end
 
-      Parser.parse(response.body)
+      response_to_result(response)
     end
 
     def get(url, params={})
@@ -33,7 +35,14 @@ module ChattinApi
         req.params = params
       end
 
-      Parser.parse(response.body)
+      response_to_result(response)
+    end
+
+    private
+
+    def response_to_result(response)
+      value = Parser.parse(response.body)
+      Result.new(response.status, value)
     end
   end
 end

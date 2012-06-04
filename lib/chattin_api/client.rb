@@ -2,8 +2,6 @@ require 'chattin_api/proxies/comment_proxy'
 
 module ChattinApi
   class Client
-    DEFAULTS = {:port => 80}
-
     attr_reader :connection
     private :connection
 
