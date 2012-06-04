@@ -27,6 +27,6 @@ task :tag do
     sh "git tag v#{VERSION}"
     sh "git push origin v#{VERSION}"
   else
-    fail "You're work tree isn't clean!"
+    fail "Your work tree isn't clean!"
   end
 end
