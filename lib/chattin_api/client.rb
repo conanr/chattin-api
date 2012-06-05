@@ -12,5 +12,13 @@ module ChattinApi
     def comments
       Proxies::CommentProxy.new(connection)
     end
+    
+    def presentations
+      Proxies::PresentationProxy.new(connection)
+    end
+    
+    def users
+      Proxies::UserProxy.new(connection)
+    end
   end
 end
