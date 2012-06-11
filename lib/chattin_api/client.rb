@@ -16,6 +16,10 @@ module ChattinApi
     def presentations
       Proxies::PresentationProxy.new(connection)
     end
+
+    def invites
+      Proxies::InviteProxy.new(connection)
+    end
     
     def users
       Proxies::UserProxy.new(connection)
