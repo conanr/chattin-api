@@ -1,5 +1,3 @@
-require 'chattin_api/proxies/comment_proxy'
-
 module ChattinApi
   class Client
     attr_reader :connection
